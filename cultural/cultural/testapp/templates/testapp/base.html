@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sanskriti Wellness{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --saffron: #FF9933;
+            --india-green: #138808;
+            --chakra-blue: #1A3C8B;
+            --bg-cream: #FDFCF0;
+            --maroon: #800000;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            font-family: 'Inter', sans-serif;
+            color: #2d2d2d;
+            overflow-x: hidden;
+        }
+
+        .title-font { font-family: 'Playfair Display', serif; }
+
+        /* Navbar Styling */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: var(--maroon) !important;
+            font-weight: 700;
+        }
+
+        /* Modern Card Styling */
+        .soft-card {
+            background: white;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+        }
+
+        .soft-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .btn-cultural {
+            background: var(--saffron);
+            color: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-cultural:hover {
+            background: var(--maroon);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: white;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top animate__animated animate__fadeInDown">
+    <div class="container">
+        <a class="navbar-brand title-font" href="{% url 'home' %}">
+            <i class="fa-solid fa-om me-2"></i>SANSKRITI
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link px-3 fw-bold" href="{% url 'home' %}">
+                        <i class="fas fa-home me-1"></i> Home
+                    </a>
+                </li>
+                
+                {% if user.is_authenticated %}
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link px-3 fw-bold" href="{% url 'profile' %}">
+                            <i class="fas fa-user me-1"></i> Profile
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <span class="badge bg-light text-dark p-2 me-2">Hi, {{ user.username }}</span>
+                        <a href="{% url 'logout' %}" class="btn btn-sm btn-outline-danger rounded-pill">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item ms-lg-3">
+                        <a href="{% url 'login' %}" class="btn btn-cultural btn-sm">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="main-content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-0 text-muted small">© 2026 Indian Cultural Practices & Well-Being Portal</p>
+        <div class="mt-2" style="color: var(--saffron)">
+            <i class="fab fa-instagram mx-2"></i>
+            <i class="fab fa-facebook mx-2"></i>
+            <i class="fab fa-twitter mx-2"></i>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

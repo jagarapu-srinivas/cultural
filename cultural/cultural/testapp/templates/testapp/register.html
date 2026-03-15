@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'testapp/base.html' %}
+{% block title %}Register | Sanskriti Wellness{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 animate__animated animate__fadeInUp">
+            <div class="soft-card p-5">
+                <div class="text-center mb-4">
+                    <h2 class="title-font">Join Sanskriti</h2>
+                    <p class="text-muted">Start your personalized well-being journey today.</p>
+                </div>
+                <form method="post" class="custom-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-cultural w-100 py-3 mt-4">Create Account</button>
+                </form>
+                <p class="text-center text-muted mt-4 mb-0">
+                    Already a member? <a href="{% url 'login' %}" style="color:var(--maroon); font-weight:600;">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .custom-form input { border-radius: 12px; padding: 10px 15px; border: 1px solid #eee; background: #fcfcfc; width: 100%; margin-bottom: 10px; }
+</style>
+{% endblock %}
+</body>
+</html>

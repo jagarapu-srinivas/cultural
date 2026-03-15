@@ -1,0 +1,24 @@
+{% extends 'testapp/base.html' %}
+{% block title %}Surya Namaskar Details{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="title-font display-4">Surya Namaskar</h1>
+        <p class="text-muted">The 12-Step Sun Salutation for Vitality</p>
+    </div>
+
+    <div class="row g-4">
+        {% for step in steps %}
+        <div class="col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: {{ forloop.counter0 }}00ms;">
+            <div class="soft-card h-100 text-center border-bottom border-{{ step.color }} border-4 shadow-sm p-4">
+                <span class="badge bg-{{ step.color }} mb-3">Step {{ forloop.counter }}</span>
+                <div class="fs-1 mb-3">{{ step.icon }}</div>
+                <h4 class="fw-bold">{{ step.name }}</h4>
+                <p class="small text-muted mb-4">{{ step.desc }}</p>
+                <div class="bg-light p-2 rounded-pill small fw-bold">Breath: {{ step.breath }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

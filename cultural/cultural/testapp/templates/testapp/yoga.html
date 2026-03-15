@@ -1,0 +1,95 @@
+{% extends 'testapp/base.html' %}
+{% block title %}Yoga Practices | Sanskriti Wellness{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5 animate__animated animate__fadeIn">
+        <span class="badge rounded-pill bg-success text-white mb-2 px-3 py-2 text-uppercase fw-bold">Holistic Health</span>
+        <h2 class="title-font display-4">Master Your Asanas</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+            A collection of foundational and advanced postures to improve strength, flexibility, and mental clarity.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 100ms;">
+            <div class="soft-card h-100 text-center border-bottom border-primary border-4">
+                <div class="text-primary fw-bold mb-2">STRENGTH</div>
+                <div class="fs-1 mb-2">🪑</div>
+                <h4 class="title-font">Utkatasana</h4>
+                <p class="text-muted small">The Chair Pose strengthens the lower body and core while stretching the shoulders and chest.</p>
+                <div class="mt-2 p-2 bg-light rounded-3 small text-primary fw-bold">Benefit: Leg Endurance</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 200ms;">
+            <div class="soft-card h-100 text-center border-bottom border-danger border-4">
+                <div class="text-danger fw-bold mb-2">WARRIOR</div>
+                <div class="fs-1 mb-2">🛡️</div>
+                <h4 class="title-font">Virabhadrasana I</h4>
+                <p class="text-muted small">Improves focus and balance while stretching the front body and strengthening the arms and back.</p>
+                <div class="mt-2 p-2 bg-light rounded-3 small text-danger fw-bold">Benefit: Core Stability</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 300ms;">
+            <div class="soft-card h-100 text-center border-bottom border-warning border-4">
+                <div class="text-warning fw-bold mb-2">ALIGNMENT</div>
+                <div class="fs-1 mb-2">📐</div>
+                <h4 class="title-font">Trikonasana</h4>
+                <p class="text-muted small">The Triangle Pose stretches the hips and hamstrings while opening the chest for better breathing.</p>
+                <div class="mt-2 p-2 bg-light rounded-3 small text-warning fw-bold">Benefit: Hip Flexibility</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 400ms;">
+            <div class="soft-card h-100 text-center border-bottom border-info border-4">
+                <div class="text-info fw-bold mb-2">FLEXIBILITY</div>
+                <div class="fs-1 mb-2">🧘</div>
+                <h4 class="title-font">Paschimottanasana</h4>
+                <p class="text-muted small">A seated forward bend that stretches the entire back of the body, from calves to spine.</p>
+                <div class="mt-2 p-2 bg-light rounded-3 small text-info fw-bold">Benefit: Calms the Mind</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 500ms;">
+            <div class="soft-card h-100 text-center border-bottom border-success border-4">
+                <div class="text-success fw-bold mb-2">BACKBEND</div>
+                <div class="fs-1 mb-2">🏹</div>
+                <h4 class="title-font">Dhanurasana</h4>
+                <p class="text-muted small">The Bow Pose opens the chest and stretches the front body while strengthening back muscles.</p>
+                <div class="mt-2 p-2 bg-light rounded-3 small text-success fw-bold">Benefit: Spinal Health</div>
+            </div>
+        </div>
+
+        <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 600ms;">
+            <div class="soft-card h-100 text-center border-bottom border-maroon border-4">
+                <div class="text-maroon fw-bold mb-2">RECOVERY</div>
+                <div class="fs-1 mb-2">🌉</div>
+                <h4 class="title-font">Setu Bandhasana</h4>
+                <p class="text-muted small">The Bridge Pose strengthens the glutes and hamstrings while relieving back fatigue.</p>
+                <div class="mt-2 p-2 bg-light rounded-3 small text-maroon fw-bold">Benefit: Anxiety Relief</div>
+            </div>
+        </div>
+
+        <div class="col-md-12 animate__animated animate__fadeInUp" style="animation-delay: 700ms;">
+            <a href="{% url 'surya_detail' %}" class="text-decoration-none">
+                <div class="soft-card text-center border-warning border-4 py-5 bg-warning bg-opacity-10">
+                    <div class="text-warning fw-bold mb-2">MASTER SEQUENCE</div>
+                    <div class="fs-1 mb-2">☀️</div>
+                    <h2 class="title-font text-dark">Surya Namaskar (12 Steps)</h2>
+                    <p class="text-muted mb-0">Click here to view the complete 12-step illustrated guide.</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    /* Adding custom Maroon color to match your festival CSS */
+    .border-maroon { border-color: #800000 !important; }
+    .text-maroon { color: #800000; }
+</style>
+{% endblock %}

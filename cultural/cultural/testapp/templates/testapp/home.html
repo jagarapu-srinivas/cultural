@@ -1,0 +1,168 @@
+{% extends 'testapp/base.html' %}
+
+{% block title %}Sanskriti | Ancient Wisdom for Modern Life{% endblock %}
+
+{% block content %}
+<!-- Hero section with image background -->
+<div class="hero-container position-relative overflow-hidden mb-5 animate__animated animate__fadeIn" style="background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div class="hero-overlay d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <span class="badge rounded-pill bg-light text-dark mb-3 px-3 py-2 animate__animated animate__fadeInDown animate__delay-1s">
+                Explore Indian Heritage
+            </span>
+            <h1 class="display-2 title-font mb-4 animate__animated animate__zoomIn" style="color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">
+                The Path to <span style="color: var(--saffron);">Total Well-Being</span>
+            </h1>
+            <p class="lead text-white mb-5 mx-auto animate__animated animate__fadeInUp animate__delay-1s" style="max-width: 700px; opacity: 0.9;">
+                Connect with centuries of Vedic knowledge, yoga techniques, and spiritual practices designed for your physical and mental harmony.
+            </p>
+            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="{% url 'yoga' %}" class="btn btn-cultural shadow-lg">Begin Practice</a>
+                <a href="#explore" class="btn btn-outline-light rounded-pill px-4 py-2">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.43,147.69,126.35,221.39,112.34c56.88-10.79,93.45-31.54,100-55.9Z" fill="#FDFCF0"></path>
+        </svg>
+    </div>
+</div>
+
+<!-- New creative sections -->
+<div class="container" id="explore">
+    <div class="row mb-5 animate__animated animate__fadeInUp">
+        <div class="col-12">
+            <div class="soft-card text-center p-5 border-0 shadow-sm" style="background: #fff8f0; border-left: 10px solid var(--saffron) !important;">
+                <i class="fa-solid fa-quote-left display-6 mb-3" style="color: var(--saffron)"></i>
+                <h4 class="title-font font-italic mb-3">"Health is wealth, peace of mind is happiness, Yoga shows the way."</h4>
+                <p class="text-muted mb-0">— Swami Vishnudevananda</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+        <div class="col-lg-4 animate__animated animate__fadeInLeft">
+            <div class="pillar-card h-100 p-4 text-center">
+                <div class="icon-circle mb-4 mx-auto" style="background: #fff0e0;">
+                    <i class="fa-solid fa-person-rays text-warning"></i>
+                </div>
+                <h3 class="title-font">Yoga</h3>
+                <p class="text-muted">Master asanas and breathing techniques to revitalize your body.</p>
+                <ul class="list-unstyled text-start mb-4">
+                    <li><i class="fas fa-check text-success me-2"></i> Hatha & Vinyasa</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Pranayama</li>
+                </ul>
+                <a href="{% url 'yoga' %}" class="btn btn-outline-dark rounded-pill w-100">Enter Studio</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 animate__animated animate__fadeInUp">
+            <div class="pillar-card h-100 p-4 text-center featured">
+                <div class="icon-circle mb-4 mx-auto" style="background: #e0f0ff;">
+                    <i class="fa-solid fa-om text-primary"></i>
+                </div>
+                <h3 class="title-font">Meditation</h3>
+                <p class="text-muted">Discover silence and mindfulness through ancient Vedic dhyana.</p>
+                <ul class="list-unstyled text-start mb-4">
+                    <li><i class="fas fa-check text-success me-2"></i> Guided Sessions</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Sound Healing</li>
+                </ul>
+                <a href="{% url 'meditation' %}" class="btn btn-cultural w-100">Start Session</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 animate__animated animate__fadeInRight">
+            <div class="pillar-card h-100 p-4 text-center">
+                <div class="icon-circle mb-4 mx-auto" style="background: #e0ffe0;">
+                    <i class="fa-solid fa-calendar-check text-success"></i>
+                </div>
+                <h3 class="title-font">Festivals</h3>
+                <p class="text-muted">Understand the spiritual significance of India's colorful traditions.</p>
+                <ul class="list-unstyled text-start mb-4">
+                    <li><i class="fas fa-check text-success me-2"></i> Cultural History</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Ritual Guides</li>
+                </ul>
+                <a href="{% url 'festival' %}" class="btn btn-outline-dark rounded-pill w-100">View Calendar</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 animate__animated animate__fadeInRight">
+            <div class="pillar-card h-100 p-4 text-center">
+                <div class="icon-circle mb-4 mx-auto" style="background: #e0ffe0;">
+                    <i class="fa-solid fa-seedling text-success"></i>
+                </div>
+                <h3 class="title-font">Agriculture</h3>
+                <p class="text-muted">Learn about traditional farming and its role in culture.</p>
+                <ul class="list-unstyled text-start mb-4">
+                    <li><i class="fas fa-check text-success me-2"></i> Seasonal Crops</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Eco Practices</li>
+                </ul>
+                <a href="{% url 'agriculture' %}" class="btn btn-outline-dark rounded-pill w-100">Explore Fields</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 animate__animated animate__fadeInRight">
+            <div class="pillar-card h-100 p-4 text-center">
+                <div class="icon-circle mb-4 mx-auto" style="background: #e0ffe0;">
+                    <i class="fa-solid fa-utensils text-success"></i>
+                </div>
+                <h3 class="title-font">Food</h3>
+                <p class="text-muted">Discover recipes and the philosophy behind our cuisine.</p>
+                <ul class="list-unstyled text-start mb-4">
+                    <li><i class="fas fa-check text-success me-2"></i> Festive Recipes</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Ayurvedic Meals</li>
+                </ul>
+                <a href="{% url 'food' %}" class="btn btn-outline-dark rounded-pill w-100">See Dishes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Hero Styles */
+    .hero-container {
+        position: relative;
+        min-height: 80vh;
+        overflow: hidden;
+    }
+    .hero-overlay {
+        position: relative;
+        z-index: 2;
+        min-height: 80vh;
+    }
+    .hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        line-height: 0;
+    }
+
+    /* Card Styles */
+    .pillar-card {
+        background: white;
+        border-radius: 30px;
+        border: 1px solid rgba(0,0,0,0.05);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .pillar-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .pillar-card.featured {
+        border: 2px solid var(--saffron);
+        box-shadow: 0 10px 30px rgba(255, 153, 51, 0.1);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 2rem;
+    }
+</style>
+{% endblock %}

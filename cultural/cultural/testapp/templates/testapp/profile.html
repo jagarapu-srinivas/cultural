@@ -1,0 +1,37 @@
+{% extends 'testapp/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <!-- profile details panel -->
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 animate__animated animate__fadeInUp">
+                <div class="card-header text-white" style="background: var(--chakra-blue);">
+                    <h2 class="mb-0 title-font">Your Profile</h2>
+                </div>
+                <div class="card-body" style="background: var(--bg-cream);">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Username:</strong> {{ request.user.username }}</li>
+                        <li class="list-group-item"><strong>Email:</strong> {{ request.user.email }}</li>
+                        {% if request.user.first_name or request.user.last_name %}
+                            <li class="list-group-item"><strong>Name:</strong> {{ request.user.first_name }} {{ request.user.last_name }}</li>
+                        {% endif %}
+                        <li class="list-group-item"><strong>Member since:</strong> {{ request.user.date_joined|date:"F j, Y" }}</li>
+                        <li class="list-group-item"><strong>Last login:</strong> {% if request.user.last_login %}{{ request.user.last_login|date:"F j, Y, g:i a" }}{% else %}Never{% endif %}</li>
+                        <li class="list-group-item"><strong>Account status:</strong> {% if request.user.is_active %}<span class="badge bg-success">Active</span>{% else %}<span class="badge bg-danger">Inactive</span>{% endif %}</li>
+                        <li class="list-group-item"><strong>Staff member:</strong> {% if request.user.is_staff %}<span class="text-primary">Yes</span>{% else %}No{% endif %}</li>
+                        <li class="list-group-item"><strong>Superuser:</strong> {% if request.user.is_superuser %}<span class="text-warning">Yes</span>{% else %}No{% endif %}</li>
+                        {# Additional custom user fields can be shown below if available #}
+                        {# <li class="list-group-item"><strong>Phone:</strong> {{ request.user.profile.phone }}</li> #}
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'logout' %}" class="btn btn-outline-danger btn-sm">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
